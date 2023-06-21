@@ -7,7 +7,7 @@ import com.brandonhc.code.flat
 
 /**
  * ## Medium
- * ## 21. 86. Partition List
+ * ## 86. Partition List
  * ## [Website Link](https://leetcode.com/problems/partition-list/)
  */
 
