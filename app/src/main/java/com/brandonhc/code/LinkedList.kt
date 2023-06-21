@@ -1,5 +1,7 @@
 package com.brandonhc.code
 
+import android.util.Log
+
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
 
@@ -8,7 +10,7 @@ class ListNode(var `val`: Int) {
             if (list.isEmpty()) {
                 return null
             }
-            val dummyNode = ListNode(-1)
+            val dummyNode = ListNode(Int.MIN_VALUE)
             var currentNode = dummyNode
             list.forEach {
                 val tempNode = ListNode(it)
@@ -20,12 +22,20 @@ class ListNode(var `val`: Int) {
     }
 }
 
-fun ListNode.flat(): List<Int> {
+fun ListNode?.flat(): List<Int> {
     val result = arrayListOf<Int>()
     var tempNode: ListNode? = this
     while (tempNode != null) {
         result.add(tempNode.`val`)
         tempNode = tempNode.next
+    }
+    return result
+}
+
+fun Array<ListNode?>.flat(): List<List<Int>> {
+    val result = arrayListOf<List<Int>>()
+    for (item in this) {
+        result.add(item.flat())
     }
     return result
 }

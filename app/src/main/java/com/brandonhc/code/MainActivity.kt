@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.brandonhc.code.leetcode.LeetCode0088
+import com.brandonhc.code.datastructure.MaxIntPriorityQueue
+import com.brandonhc.code.leetcode.linkedlist.Code0021
+import com.brandonhc.code.leetcode.linkedlist.Code0023
+import com.brandonhc.code.leetcode.linkedlist.Code0086
 import com.brandonhc.code.ui.theme.CodeTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,16 +35,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        val testNode1 = ListNode.generateFromList(arrayListOf(1, 2, 4))
-        val testNode2 = ListNode.generateFromList(arrayListOf(1, 3, 4))
-        val testNode3 = ListNode.generateFromList(arrayListOf(1,4,3,2,5,2))
-        val testNode4 = ListNode.generateFromList(arrayListOf(-4,0,9,9,-3,-1,7,-8,5,-9,-2,-4,1,2,0,7,7,-5,-2,6,7,6,-9,1))
-        Log.d("BrandonLog", "[MainActivity-onResume]: Input = ${testNode3?.flat()}")
-        Log.d("BrandonLog", "[MainActivity-onResume]: Result = ${LeetCode0088.partition(testNode3, 3)?.flat()}")
-        Log.d("BrandonLog", "[MainActivity-onResume]: Input = ${testNode4?.flat()}")
-        Log.d("BrandonLog", "[MainActivity-onResume]: Result = ${LeetCode0088.partition(testNode4, -5)?.flat()}")
-        // [-8,-9,-9,-4,0,9,9,-3,-1,7,5,-2,-4,1,2,0,7,7,-5,-2,6,7,6,1]
-        // [-8, -9, -9, -4, 0, 9, 9, -3, -1, 7, 5, -2, -4, 1, 2, 0, 7, 7, -5, -2, 6, 7, 6, 1]
+        Code0086.runTest()
     }
 }
 
