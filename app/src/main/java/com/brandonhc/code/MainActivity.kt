@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.brandonhc.code.leetcode.linkedlist.Code0019
+import com.brandonhc.code.leetcode.linkedlist.Code0876
 import com.brandonhc.code.ui.theme.CodeTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        Code0019.runTest()
+        Code0876.runTest()
     }
 }
 
