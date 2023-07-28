@@ -1,9 +1,6 @@
 package com.brandonhc.code.leetcode.linkedlist
 
-import android.util.Log
 import com.brandonhc.code.ListNode
-import com.brandonhc.code.TestUtils
-import com.brandonhc.code.flat
 
 /**
  * ## Easy
@@ -41,59 +38,5 @@ object Code0021 {
             ptr.next = ptr2
         }
         return dummyNode.next
-    }
-
-    fun runTest() {
-        testCase1()
-        testCase2()
-        testCase3()
-    }
-
-    private fun testCase1() {
-        Log.d("BrandonLog", "[Code0021-testCase1]: ")
-        // Arrange
-        val testNode1 = ListNode.generateFromList(arrayListOf(1, 2, 4))
-        val testNode2 = ListNode.generateFromList(arrayListOf(1, 3, 4))
-        val answer = arrayListOf(1,1,2,3,4,4)
-        Log.d("BrandonLog", "input list1 = ${testNode1.flat()}")
-        Log.d("BrandonLog", "input list2 = ${testNode2.flat()}")
-
-        // Act
-        val result = mergeTwoLists(testNode1, testNode2).flat()
-
-        // Assert
-        TestUtils.checkResult(result, answer)
-    }
-
-    private fun testCase2() {
-        Log.d("BrandonLog", "[Code0021-testCase2]: ")
-        // Arrange
-        val testNode1: ListNode? = null
-        val testNode2: ListNode? = null
-        val answer: List<Int> = arrayListOf()
-        Log.d("BrandonLog", "input list1 = ${testNode1.flat()}")
-        Log.d("BrandonLog", "input list2 = ${testNode2.flat()}")
-
-        // Act
-        val result = mergeTwoLists(testNode1, testNode2).flat()
-
-        // Assert
-        TestUtils.checkResult(result, answer)
-    }
-
-    private fun testCase3() {
-        Log.d("BrandonLog", "[Code0021-testCase3]: ")
-        // Arrange
-        val testNode1: ListNode? = null
-        val testNode2: ListNode? = ListNode.generateFromList(arrayListOf(0))
-        val answer: List<Int> = arrayListOf(0)
-        Log.d("BrandonLog", "input list1 = ${testNode1.flat()}")
-        Log.d("BrandonLog", "input list2 = ${testNode2.flat()}")
-
-        // Act
-        val result = mergeTwoLists(testNode1, testNode2).flat()
-
-        // Assert
-        TestUtils.checkResult(result, answer)
     }
 }

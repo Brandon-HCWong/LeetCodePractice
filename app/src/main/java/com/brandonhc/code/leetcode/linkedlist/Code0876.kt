@@ -1,9 +1,6 @@
 package com.brandonhc.code.leetcode.linkedlist
 
-import android.util.Log
 import com.brandonhc.code.ListNode
-import com.brandonhc.code.TestUtils
-import com.brandonhc.code.flat
 
 /**
  * ## Easy
@@ -25,39 +22,5 @@ object Code0876 {
         }
 
         return nodeSlow
-    }
-
-    fun runTest() {
-        testCase1()
-        testCase2()
-    }
-
-    private fun testCase1() {
-        Log.d("BrandonLog", "[Code0876-testCase1]: ")
-        // Arrange
-        val head = ListNode.generateFromList(arrayListOf(1,2,3,4,5))
-        val answer = arrayListOf(3,4,5)
-        Log.d("BrandonLog", "input head = ${head.flat()}")
-
-        // Act
-        val result = middleNode(head).flat()
-
-        // Assert
-        TestUtils.checkResult(result, answer)
-    }
-
-    private fun testCase2() {
-        Log.d("BrandonLog", "[Code0876-testCase2]: ")
-        // Arrange
-        val head = ListNode.generateFromList(arrayListOf(1,2,3,4,5,6))
-        val x = 2
-        val answer = arrayListOf(4,5,6)
-        Log.d("BrandonLog", "input head = ${head.flat()}")
-
-        // Act
-        val result = middleNode(head).flat()
-
-        // Assert
-        TestUtils.checkResult(result, answer)
     }
 }
