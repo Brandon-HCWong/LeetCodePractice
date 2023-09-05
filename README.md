@@ -5,6 +5,7 @@
 ### Linked List
 #### Easy
  - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+ - [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
  - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 #### Medium
  - [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
