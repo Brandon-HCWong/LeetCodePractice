@@ -1,4 +1,4 @@
-package com.brandonhc.code.leetcode.linkedlist
+package com.brandonhc.code.leetcode.array
 
 
 /**

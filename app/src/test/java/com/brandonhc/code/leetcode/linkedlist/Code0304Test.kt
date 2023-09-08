@@ -1,5 +1,6 @@
 package com.brandonhc.code.leetcode.linkedlist
 
+import com.brandonhc.code.leetcode.array.Code0304
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,6 +1,4 @@
-package com.brandonhc.code.leetcode.linkedlist
-
-import java.lang.Integer.max
+package com.brandonhc.code.leetcode.array
 
 
 /**
