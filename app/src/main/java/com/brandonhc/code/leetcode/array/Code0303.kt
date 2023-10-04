@@ -1,5 +1,7 @@
 package com.brandonhc.code.leetcode.array
 
+import com.brandonhc.code.utils.IntegralMatrix
+
 
 /**
  * ## Easy
@@ -8,13 +10,9 @@ package com.brandonhc.code.leetcode.array
  */
 
 class Code0303(nums: IntArray) {
-    private var integralArray = IntArray(nums.size + 1).apply {
-        nums.forEachIndexed { index, i ->
-            this[index + 1] = this[index] + i
-        }
-    }
+    private var integralMatrix = IntegralMatrix(nums)
 
     fun sumRange(left: Int, right: Int): Int {
-        return integralArray[right + 1] -  integralArray[left]
+        return integralMatrix.sumRegion(0, left, 0, right)
     }
 }

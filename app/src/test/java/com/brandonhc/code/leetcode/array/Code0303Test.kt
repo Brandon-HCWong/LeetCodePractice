@@ -1,14 +1,8 @@
-package com.brandonhc.code.leetcode.linkedlist
+package com.brandonhc.code.leetcode.array
 
 import com.brandonhc.code.leetcode.array.Code0303
 import org.junit.Assert
 import org.junit.Test
-
-/**
- * ## Medium
- * ## 19. Remove Nth Node From End of List
- * ## [Website Link](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
- */
 
 class Code0303Test {
     @Test
