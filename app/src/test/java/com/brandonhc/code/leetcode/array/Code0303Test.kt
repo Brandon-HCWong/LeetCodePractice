@@ -1,6 +1,5 @@
 package com.brandonhc.code.leetcode.array
 
-import com.brandonhc.code.leetcode.array.Code0303
 import org.junit.Assert
 import org.junit.Test
 
