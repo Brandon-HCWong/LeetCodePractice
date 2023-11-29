@@ -34,7 +34,7 @@ class DifferenceMatrixTest {
 
         // Assert
         println("[test_Case1] answer =")
-        for (index in result.indices) {
+        for (index in answer.indices) {
             println(" ${answer[index].toList()}")
         }
         println("[test_Case1] result =")
@@ -73,10 +73,45 @@ class DifferenceMatrixTest {
 
         // Assert
         println("[test_Case2] answer =")
-        for (index in result.indices) {
+        for (index in answer.indices) {
             println(" ${answer[index].toList()}")
         }
         println("[test_Case2] result =")
+        for (index in result.indices) {
+            println(" ${result[index].toList()}")
+        }
+        Assert.assertArrayEquals(answer, result)
+    }
+
+    @Test
+    fun test_Case3() {
+        // Arrange
+        val matrix = arrayOf(
+            intArrayOf(0,0,0,0,0)
+        )
+        // [first index, last index, added value]
+        val operations = arrayOf(
+            intArrayOf(1,2,10),
+            intArrayOf(2,3,20),
+            intArrayOf(2,5,25)
+        )
+        val answer = arrayOf(
+            intArrayOf(10,55,45,25,25)
+        )
+
+        // Act
+        val differenceMatrix = DifferenceMatrix(matrix)
+        operations.forEach {
+            differenceMatrix.addRegion(it[2], 0, it[0]-1, 0, it[1]-1)
+        }
+        val result = differenceMatrix.generateResult()
+
+        // Assert
+        println("[test_Case3] answer =")
+        for (index in answer.indices) {
+            println(" ${answer[index].toList()}")
+        }
+        println("[test_Case3] result =")
         for (index in result.indices) {
             println(" ${result[index].toList()}")
         }
