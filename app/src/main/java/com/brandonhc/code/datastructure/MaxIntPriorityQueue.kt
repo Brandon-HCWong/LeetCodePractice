@@ -10,12 +10,18 @@ class MaxIntPriorityQueue (capacity: Int){
         get() = currentSize
     private val firstIndex: Int = 1
 
-    fun getList(): List<Int>? {
-        return if (currentSize == 0) {
-            null
-        } else {
-            queue.copyOfRange(firstIndex, lastIndex + 1).asList()
+    fun getList(): List<Int> {
+        val list = ArrayList<Int>()
+        while (currentSize > 0) {
+            val beforeList = queue.copyOfRange(firstIndex, lastIndex + 1).asList()
+            println("[getList] beforeList = $beforeList")
+            getAndDeleteMax()?.let {
+                list.add(it)
+            }
+            val afterList = queue.copyOfRange(firstIndex, lastIndex + 1).asList()
+            println("[getList] afterList = $afterList")
         }
+        return list
     }
 
     fun getSize() = currentSize
@@ -34,7 +40,7 @@ class MaxIntPriorityQueue (capacity: Int){
         }
     }
 
-    fun getAndDeleteMax(): Int {
+    fun getAndDeleteMax(): Int? {
         return if (currentSize > 0) {
             val maxValue = queue[firstIndex]
             queue[firstIndex] = queue[lastIndex]
@@ -43,7 +49,7 @@ class MaxIntPriorityQueue (capacity: Int){
             sink(firstIndex)
             maxValue
         } else {
-            Int.MIN_VALUE
+            null
         }
     }
 
@@ -57,21 +63,32 @@ class MaxIntPriorityQueue (capacity: Int){
 
     private fun sink(i: Int) {
         var index = i
+        println("[sink] currentSize = $currentSize")
+        val beforeList = queue.copyOfRange(firstIndex, lastIndex + 1).asList()
+        println("[sink] beforeList = $beforeList")
         while (index in firstIndex until  currentSize) {
+            println("[sink] index = $index")
             var maxIndex = getLeftNodeIndex(index)
 
-            if (maxIndex >= currentSize) {
+            if (maxIndex > currentSize) {
                 break
             }
 
             val rightIndex = getRightNodeIndex(index)
 
-            if (rightIndex < currentSize && queue[rightIndex] > queue[maxIndex]) {
+            if (rightIndex <= currentSize && queue[rightIndex] > queue[maxIndex]) {
                 maxIndex = rightIndex
             }
 
+            if (queue[index] > queue[maxIndex]) {
+                break
+            }
+
+            println("[sink] swap = ($maxIndex, $index)")
             swap(maxIndex, index)
             index = maxIndex
+            val sinkList = queue.copyOfRange(firstIndex, lastIndex + 1).asList()
+            println("[sink] sinkList = $sinkList")
         }
     }
 
