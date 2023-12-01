@@ -1,6 +1,5 @@
 package com.brandonhc.code.leetcode.linkedlist
 
-import android.util.Log
 import com.brandonhc.code.ListNode
 
 /**

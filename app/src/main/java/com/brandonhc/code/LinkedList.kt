@@ -101,6 +101,14 @@ fun ListNode?.flat(): List<Int> {
     return result
 }
 
+fun ListNode?.last(): ListNode? {
+    var result: ListNode? = this
+    while (result?.next != null) {
+        result = result.next
+    }
+    return result
+}
+
 fun Array<ListNode?>.flat(): List<List<Int>> {
     val result = arrayListOf<List<Int>>()
     for (item in this) {
